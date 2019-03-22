@@ -1,6 +1,7 @@
 package org.organizzation.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 public class Receipt {
@@ -42,6 +43,14 @@ public class Receipt {
 		for (BasketItem bi : this.items) {
 			System.out.println(bi.toString());
 		}
-	}	
+	}
+	
+	public void printTotalCost(){
+		System.out.println(this.toStringTotalCost());
+	}
+	
+	public String toStringTotalCost(){
+		return "Total: "+this.getTotalCost().setScale(2, RoundingMode.HALF_UP);
+	}
 	
 }

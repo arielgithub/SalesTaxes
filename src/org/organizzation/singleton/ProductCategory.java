@@ -4,20 +4,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.organizzation.constants.Constants;
+import org.organizzation.enums.ProductTypes;
 
 public class ProductCategory {
 	
 	private static ProductCategory single_instance = null;  
-	private Map<String, String> categories = new HashMap<String, String>();
+	private Map<String, ProductTypes> categories = new HashMap<String, ProductTypes>();
 
     private ProductCategory(){
-    	this.categories.put("book", Constants.BOOKS);
-    	this.categories.put("music CD", Constants.GENERICS);
-    	this.categories.put("chocolate", Constants.FOOD);
-    	this.categories.put("bottle of perfume", Constants.GENERICS);
+    	this.categories.put("book", ProductTypes.BOOKS);
+    	this.categories.put("music CD", ProductTypes.GENERICS);
+    	this.categories.put("chocolate", ProductTypes.FOOD);
+    	this.categories.put("bottle of perfume", ProductTypes.GENERICS);
     }
     
-    public Map<String, String> getCategories() {
+    public Map<String, ProductTypes> getCategories() {
     	return this.categories;
     }
   
