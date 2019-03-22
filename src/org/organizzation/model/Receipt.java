@@ -45,7 +45,11 @@ public class Receipt {
 		}
 	}
 	
-	public String printTotalCost(){
+	public void printTotalCost(){
+		System.out.println(this.toStringTotalCost());
+	}
+	
+	public String toStringTotalCost(){
 		return "Total: "+this.getTotalCost().setScale(2, RoundingMode.HALF_UP);
 	}
 	

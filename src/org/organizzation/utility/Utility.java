@@ -31,7 +31,7 @@ public class Utility {
 	    JSeparator separator = new JSeparator();
 	    f.add(separator);
 	    
-    	JLabel jTotal = new JLabel(receipt.printTotalCost()); 
+    	JLabel jTotal = new JLabel(receipt.toStringTotalCost()); 
     	jTotal.setBounds(20,20*iteration, 1000,60);
 	    
 	    f.add(jTotal);
