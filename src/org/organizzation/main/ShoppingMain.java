@@ -25,7 +25,6 @@ public class ShoppingMain {
 		
 		System.out.println("-----------------------");
 
-		
 //		2 imported chocolate at 10.00
 //		1 imported bottle of perfume at 47.50
 		System.out.println("Receipt2:");

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Map;
 import org.organizzation.constants.Constants;
+import org.organizzation.enums.ProductTypes;
 import org.organizzation.singleton.ProductCategory;
 
 public class BasketItem extends Item {
@@ -33,11 +34,11 @@ public class BasketItem extends Item {
 		BigDecimal subTotal = this.getPrice();
 		
 		ProductCategory pc = ProductCategory.getInstance();
-		Map<String, String> categories = pc.getCategories();
+		Map<String, ProductTypes> categories = pc.getCategories();
 		
-		if(categories.get(this.getName()) == Constants.BOOKS || 
-				categories.get(this.getName()) == Constants.FOOD ||
-					categories.get(this.getName()) == Constants.MEDICAL) {
+		if(categories.get(this.getName()) == ProductTypes.BOOKS || 
+				categories.get(this.getName()) == ProductTypes.FOOD ||
+					categories.get(this.getName()) == ProductTypes.MEDICAL) {
 			
 			BigDecimal taxes = this.getPrice().multiply(Constants.BASIC_SALE_TAX).divide(Constants.HUNDRED);
 			subTotal = subTotal.add(taxes);
