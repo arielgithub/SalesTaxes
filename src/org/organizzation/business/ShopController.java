@@ -6,6 +6,7 @@ import org.organizzation.model.Basket;
 import org.organizzation.model.BasketItem;
 import org.organizzation.model.Item;
 import org.organizzation.model.Receipt;
+import org.organizzation.utility.Utility;
 
 public class ShopController {
 	
@@ -34,6 +35,11 @@ public class ShopController {
 		receipt.setItems(this.basket.getItems());
 		
 		return receipt;
+	}
+	
+	public void viewSwingRecipt(String frameName, Receipt r, int offset) {
+		Utility utility = new Utility();
+		utility.generateSwingReceipt(frameName, r, offset);
 	}
 	
 }

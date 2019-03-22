@@ -21,6 +21,9 @@ public class ShoppingMain {
 		Receipt r1 = sc.generateReceipt();
 		r1.printItemsAndTotal();
 		r1.printTotalCost();
+		
+		sc.viewSwingRecipt("Receipt1", r1, 200);
+		
 		sc.cleanBasket();
 		
 		System.out.println("-----------------------");
@@ -31,9 +34,11 @@ public class ShoppingMain {
 		sc.addProductToBasket("chocolate", 2, new BigDecimal(10.00), true);
 		sc.addProductToBasket("bottle of perfume", 1, new BigDecimal(47.50), true);
 		
-		r1 = sc.generateReceipt();
-		r1.printItemsAndTotal();
-		r1.printTotalCost();
+		Receipt r2 = sc.generateReceipt();
+		r2.printItemsAndTotal();
+		r2.printTotalCost();
+		
+		sc.viewSwingRecipt("Receipt2", r1, -200);
 	}
 
 }

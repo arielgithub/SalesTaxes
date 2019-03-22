@@ -55,7 +55,10 @@ public class BasketItem extends Item {
 	
 	@Override
 	public String toString() {
-		return "Item name: "+this.getName()+" - Total: "+this.getTotalWithTax().setScale(2, RoundingMode.HALF_UP);
+		String itemS = "Item name: "+this.getName();
+		String importedS = this.getImported() ? " - imported " : "";
+		String totalS = " - Total: "+this.getTotalWithTax().setScale(2, RoundingMode.HALF_UP);
+		return  itemS+importedS+totalS;
 	}
 
 }
